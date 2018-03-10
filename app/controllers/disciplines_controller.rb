@@ -14,6 +14,7 @@ class DisciplinesController < ApplicationController
       flash[:success] = "ŻEM DODOŁ DYSCYPLINA"
       redirect_to disciplines_path
     else
+      flash[:error] = "DAŁ ŻEŚ CIAŁA"
       render 'new'
     end
   end
