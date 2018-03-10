@@ -1,0 +1,10 @@
+<h1> Treningi </h1>
+
+<ul>
+  <% @trainings.each do |training| %>
+
+    <li> <%= link_to training.name, user_training_path(current_user,training) %>     <%= "--  #{training.user.name}" %>  </li>
+
+  <% end %>
+
+</ul>
