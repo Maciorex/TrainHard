@@ -1,4 +1,5 @@
 class DisciplinesController < ApplicationController
+
   def index
     @disciplines = Discipline.all
   end
@@ -11,6 +12,7 @@ class DisciplinesController < ApplicationController
     @discipline = Discipline.new(discipline_params)
     if @discipline.save
       flash[:success] = "ŻEM DODOŁ DYSCYPLINA"
+      redirect_to disciplines_path
     else
       render 'new'
     end
