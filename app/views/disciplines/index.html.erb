@@ -1,1 +1,13 @@
-<h1> List of disciplines </h1>
+<h1 align="center"> List of disciplines </h1>
+
+<% @disciplines.each do |discipline| %>
+
+  <div class="row col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="discipline-name">
+        <%= discipline.name %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
