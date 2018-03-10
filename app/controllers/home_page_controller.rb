@@ -1,4 +1,4 @@
-class HomePageController < ActionController::Base
+class HomePageController < ApplicationController
     def index
 
     end
