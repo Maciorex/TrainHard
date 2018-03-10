@@ -1,5 +1,3 @@
-class HomePageController < ActionController::Base
-    def index
-
-    end
+class HomePageController < ApplicationController
+    def index; end
 end
