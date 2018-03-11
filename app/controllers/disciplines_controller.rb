@@ -22,6 +22,10 @@ class DisciplinesController < ApplicationController
     @discipline = Discipline.find(params[:id])
   end
 
+  def edit
+    @discipline = Discipline.find(params[:id])
+  end
+
   private
 
   def discipline_params
