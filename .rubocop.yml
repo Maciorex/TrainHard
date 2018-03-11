@@ -31,9 +31,15 @@ Style/DotPosition:
   EnforcedStyle: leading
 Style/FrozenStringLiteralComment:
   Enabled: false
-  Style/StringLiteralsInInterpolation:
+Style/StringLiteralsInInterpolation:
   Enabled: false
 Naming/FileName:
   Enabled: false
 Style/ClassAndModuleChildren:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
+Style/StderrPuts:
   Enabled: false
