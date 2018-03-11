@@ -28,5 +28,4 @@ class DisciplinesController < ApplicationController
   def discipline_params
     params.require(:discipline).permit(:name, :description)
   end
-
 end
