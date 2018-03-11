@@ -1,4 +1,5 @@
 class DisciplinesController < ApplicationController
+  before_action :require_admin, only:[:new, :create, :edit, :update, :destroy]
   def index
     @disciplines = Discipline.all
   end
@@ -40,5 +41,12 @@ class DisciplinesController < ApplicationController
 
   def discipline_params
     params.require(:discipline).permit(:name, :description)
+  end
+
+  def require_admin
+    if current_user && !current_user.admin?
+      flash[:danger] = "Ino do Admina !!"
+      redirect_to root_path
+    end
   end
 end

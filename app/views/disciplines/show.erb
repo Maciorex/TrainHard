@@ -5,5 +5,6 @@
     <%= @discipline.description %>
   </div>
 </div>
-
-  <%= link_to "edit discipline", edit_discipline_path(@discipline), class: "btn btn-xs btn-primary" %>
+<% if current_user && current_user.admin? %>
+<%= link_to "edit discipline", edit_discipline_path(@discipline), class: "btn btn-xs btn-primary" %>
+<% end %>
