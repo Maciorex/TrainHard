@@ -4,15 +4,29 @@ class PlacesController < ApplicationController
     @place = Place.all
   end
 
+  def new
+    @place = Place.new
+  end
+
   def create
-    @place = Place.new(params[:place])
+    @place = Place.new(place_params)
     if @place.save
-      redirected_to @place
+      flash[:success] = "Place dodany"
+      redirect_to places_path
     else
-      render :action => "new"
+      flash[:error] = "smuteczek"
+      render 'new'
     end
   end
-  # def new @place = Place.new
-  # end
 
+  def show
+    @place = Place.find(params[:id])
+  end
+
+
+  private
+
+  def place_params
+    params.require(:place).permit(:country, :city, :resort, :otherPlace, :gpsCoordinates)
+  end
 end

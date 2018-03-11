@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20180310154914) do
 
   create_table "disciplines", force: :cascade do |t|
@@ -18,8 +17,7 @@ ActiveRecord::Schema.define(version: 20180310154914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
-
-
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "country", default: "", null: false
@@ -27,7 +25,6 @@ ActiveRecord::Schema.define(version: 20180310154914) do
     t.string "resort", default: "", null: false
     t.string "otherPlace", default: "", null: false
     t.string "gpsCoordinates", default: "", null: false
-
   end
 
   create_table "users", force: :cascade do |t|
