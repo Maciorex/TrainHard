@@ -7,7 +7,7 @@
       </div>
       <div class="discipline-description">
         <hr>
-        <%= discipline.description %>
+        <%= truncate(discipline.description, :length => 100) %>
       </div>
     </div>
   </div>
