@@ -1,5 +1,29 @@
-<h1> Szczegóły treningu: <%= @training.name %> </h1>
+<h1> <%= @training.name %> - training details</h1>
 
-<p>
-  <%= @training.name %>
-</p>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"><%= @training.name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Date of training</td>
+      <td><%= @training.dateoftraining%></td>
+    </tr>
+    <tr>
+      <td>Distance [meters]</td>
+      <td><%= @training.distance_meters%></td>
+    </tr>
+    <tr>
+      <td>Training time [minutes]</td>
+      <td><%= @training.trainingtime_minutes%></td>
+    </tr>
+    <tr>
+      <td>Training intensity</td>
+      <td><%= @training.intensitylevel%></td>
+    </tr>
+  </tbody>
+</table>
