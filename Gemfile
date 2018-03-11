@@ -18,6 +18,7 @@ gem 'turbolinks', '~> 5'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'rubocop', require: false
 group :production do
   gem 'pg', '~>0.11'
 end
