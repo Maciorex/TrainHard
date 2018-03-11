@@ -1,0 +1,10 @@
+<h1 align="center"><%= @discipline.name %></h1>
+
+<div class="well">
+  <div align="center">
+    <%= @discipline.description %>
+  </div>
+</div>
+<% if current_user && current_user.admin? %>
+  <%= link_to "edit discipline", edit_discipline_path(@discipline), class: "btn btn-xs btn-primary" %>
+<% end %>

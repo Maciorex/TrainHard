@@ -6,7 +6,8 @@
         <%= link_to discipline.name, discipline_path(discipline) %>
       </div>
       <div class="discipline-description">
-        <%= discipline.description %>
+        <hr>
+        <%= truncate(discipline.description, :length => 100) %>
       </div>
     </div>
   </div>

@@ -1,14 +1,3 @@
-<h1>Create new discipline</h1>
-<%= form_for(@discipline, :html => { class: "form-horizontal", role: "form" }) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Discipline name" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, rows: 10, placeholder: "Discipline description" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit "Add new discipline", class: "btn btn-primary btn-big" %>
-  </div>
-<% end %>
+<h1 align="center">Create new discipline</h1>
+
+<%= render 'form' %>
