@@ -26,6 +26,16 @@ class DisciplinesController < ApplicationController
     @discipline = Discipline.find(params[:id])
   end
 
+  def update
+    @discipline = Discipline.find(params[:id])
+    if @discipline.update(discipline_params)
+      flash[:success] = "ŻEŚ TRZASNĄŁ APDEJTA"
+      redirect_to discipline_path(@discipline)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def discipline_params
