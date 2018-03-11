@@ -1,9 +1,13 @@
-<h1> Treningi </h1>
-<ul>
-  <% @trainings.each do |training| %>
-    <li>
-      <%= link_to training.name, user_training_path(current_user,training) %>
-      <%= "--  #{training.user.name}" %>
-    </li>
-  <% end %>
-</ul>
+<h1 align="center"> List of trainings </h1>
+<% @trainings.each do |training| %>
+  <div class="row col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="training-name">
+        <%= link_to training.name, user_training_path(current_user,training) %>
+      </div>
+      <div class="trainig-description">
+        <%= training.dateoftraining %>
+      </div>
+    </div>
+  </div>
+<% end %>
