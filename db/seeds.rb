@@ -8,9 +8,10 @@
 
 users = %w(macio basia seba mati brajan szefu lysy adik jan janusz)
 
-users.each_with_index do |user, index|
+users.each_with_index do |user|
   User.create(password: "password", email: "#{user}@email.com")
 end
 
 user1 = User.first
 user1.admin = true
+user1.save

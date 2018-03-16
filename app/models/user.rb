@@ -4,9 +4,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :trainings
-
-  def full_name
-    return ("#{first_name} #{second_name}") if (first_name || second_name)
-    "Anonymous"
-  end
 end
