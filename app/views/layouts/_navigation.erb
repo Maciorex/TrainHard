@@ -1,0 +1,61 @@
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">TrainHard</a>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav col-md-6">
+        <li><%= link_to "HOME", root_path  %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Disciplines <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Disciplines", disciplines_path %></li>
+            <% if current_user&.admin? %>
+              <li><%= link_to "New Discipline", new_discipline_path %></li>
+            <% end %>
+          </ul>
+        </li>
+        <% if current_user %>
+          <li><%= link_to "My Trainings", user_trainings_path(current_user) %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right col-md-4">
+        <div class="row">
+          <% if current_user %>
+            <li class="col-md-8 text-right user-edit">
+              <span class="glyphicon glyphicon-user"></span>
+              <%= link_to current_user.full_name, edit_user_registration_path(current_user), class:"navbar-link" %>
+            </li>
+            <li class="col-md-4 logout-login">
+              <%= link_to "Logout", destroy_user_session_path, class: "btn btn-xs btn-danger", method: :delete %>
+            </li>
+          <% else %>
+            <li class="col-md-offset-8 col-md-4 logout-login">
+              <%= link_to "Login", new_user_session_path, class: "btn btn-xs btn-success" %>
+            </li>
+          <% end %>
+        </div>
+     </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </div>
+  </div><!--/row-->
+
+  <footer>
+    <p>&copy; Company 2018</p>
+  </footer>
+
+</div> <!-- /container -->
+
+</body>
+</html>
