@@ -46,7 +46,7 @@ class DisciplinesController < ApplicationController
   end
 
   def require_admin
-    if current_user && !current_user.admin?
+    unless current_user.admin?
       flash[:danger] = "Ino do Admina !!"
       redirect_to root_path
     end
