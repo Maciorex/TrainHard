@@ -14,6 +14,7 @@ class Training < ApplicationRecord
   end
 
   def self.training_discipline_match(params)
+    params.capitalize!
     Training.joins(:discipline).where(disciplines: {:name =>  "#{params}"})
   end
 
