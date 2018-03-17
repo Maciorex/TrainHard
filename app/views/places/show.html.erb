@@ -1,0 +1,28 @@
+<h1> <%= @places.name %> - places details</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"><%= @places.name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>City of training</td>
+      <td><%= @city.nameofcity %></td>
+    </tr>
+    <tr>
+      <td>Street</td>
+      <td><%= @city.name_street %></td>
+    </tr>
+    <tr>
+    <tr>
+      <td>Where</td>
+      <td><%= @where.name_place %></td>
+    </tr>
+    <tr>
+      <td>Training time [minutes]</td>
+      <td><%= @training.trainingtime_minutes %></td>
+    </tr>
+     </tbody>
+</table>

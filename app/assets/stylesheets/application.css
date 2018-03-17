@@ -23,3 +23,11 @@
 .discipline-description {
   text-align: center;
 }
+.places-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.places-description {
+  text-align: center;
+}

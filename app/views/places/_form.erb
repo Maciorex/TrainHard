@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-12">
+    <%= form_for(@place, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :city %>
+        </div>
+		    <div class="col-sm-8">
+          <%= f.text_field :city, class: "form-control", placeholder: "Name of city" %>
+        </div>
+       </div>
+        <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :Street %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_area :street, class: "form-control", placeholder: "Name of street" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :where %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_area :where, class: "form-control", rows: 10, placeholder: "the place where you trained" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit class: "btn btn-primary btn-big" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
