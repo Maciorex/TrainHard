@@ -17,9 +17,7 @@ class TrainingsController < ApplicationController
     redirect_to user_trainings_path(current_user)
   end
 
-  def search
-
-  end
+  def search; end
 
   private
 

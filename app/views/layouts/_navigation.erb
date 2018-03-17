@@ -12,7 +12,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Disciplines <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Disciplines", disciplines_path %></li>
-            <% if current_user&.admin? %>
+            <% if current_user.admin? %>
               <li><%= link_to "New Discipline", new_discipline_path %></li>
             <% end %>
           </ul>
