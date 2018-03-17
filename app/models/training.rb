@@ -5,8 +5,7 @@ class Training < ApplicationRecord
   def self.from_search(params)
     params.strip.downcase!
     to_return = (training_name_match(params) + training_discipline_match(params) + training_date_match(params))
-    return nil unless to_return
-    to_return
+    return to_return
   end
 
   def self.training_name_match(params)
@@ -19,7 +18,7 @@ class Training < ApplicationRecord
   end
 
   def self.training_date_match(params)
-    matches('dateoftraining', params)
+    matches('date_of_training', params)
   end
 
   def self.matches(field, params)

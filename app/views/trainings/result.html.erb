@@ -9,8 +9,8 @@
     <% training.each do |training| %>
       <tr>
         <td><%= link_to training.name, user_training_path(current_user, training) %></td>
-        <td><%= training.dateoftraining %></td>
-        <td><%= training.trainingtime_minutes %></td>
+        <td><%= training.date_of_training %></td>
+        <td><%= training.time_in_minutes %></td>
         <td><%= link_to training.discipline.name, discipline_path(training.discipline) %></td>
       </tr>
     <% end %>
