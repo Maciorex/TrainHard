@@ -1,6 +1,3 @@
-<h1> Search for your training </h1>
-
-<br>
 <%= form_tag training_search_new_path, method: :get, id: "training-lookup-form" do %>
   <div class="form-group row no-padding text-center col-md-12">
     <div class="col-md-10">
@@ -13,3 +10,18 @@
     </div>
   </div>
 <% end %>
+
+<table class="table table-hover">
+  <thead>
+    <th> Name </th>
+    <th> Discipline </th>
+  </thead>
+  <tbody>
+    <% training.each do |training| %>
+      <tr>
+        <td><%= training.name %></td>
+        <td><%= training.discipline.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

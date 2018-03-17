@@ -30,6 +30,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'selenium-webdriver'
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 group :development do

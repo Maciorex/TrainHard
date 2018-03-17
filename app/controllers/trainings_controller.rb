@@ -27,10 +27,7 @@ class TrainingsController < ApplicationController
       if @training.blank?
         flash[:danger] = "No matching training"
       else
-        respond_to do |format|
-          format.html { render text: "not implemented" }
-          format.js { render partial: "trainings/result" }
-        end
+        render "result", locals: { training: @training }        
       end
     end
   end
