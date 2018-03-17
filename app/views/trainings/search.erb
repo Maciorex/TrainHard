@@ -1,0 +1,15 @@
+<h1> Search for your training </h1>
+
+<br>
+<%= form_tag training_search_path, method: :get, id: "training-lookup-form" do %>
+  <div class="form-group row no-padding text-center col-md-12">
+    <div class="col-md-10">
+      <%= text_field_tag :training, params[:training], placeholder:"Enter training name or date", autofocus: true, class: "form-control search-box input-lg" %>
+    </div>
+    <div class="col-md-2">
+      <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+      <% end %>
+    </div>
+  </div>
+<% end %>
