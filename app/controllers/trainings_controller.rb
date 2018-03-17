@@ -22,12 +22,14 @@ class TrainingsController < ApplicationController
   def search_training
     if params[:training].blank?
       flash[:danger] = "Empty search string"
+      render "search"
     else
       @training = Training.from_search(params[:training])
       if @training.blank?
         flash[:danger] = "No matching training"
+        render "search"
       else
-        render "result", locals: { training: @training }        
+        render "result", locals: { training: @training }
       end
     end
   end
