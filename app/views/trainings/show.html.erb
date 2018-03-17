@@ -23,6 +23,10 @@
       <td>Training intensity</td>
       <td><%= @training.intensitylevel %></td>
     </tr>
+    <tr>
+      <tr>
+        <td>Discipline</td>
+        <td><%= link_to @training.discipline.name,  discipline_path(@training.discipline) %></td>
+      </tr>
   </tbody>
 </table>
-<%= @training.discipline.name %>

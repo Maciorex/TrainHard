@@ -13,7 +13,7 @@ class Training < ApplicationRecord
     matches('name', params)
   end
 
-  #def self.training_discipline_match(params)
+  # def self.training_discipline_match(params)
   #  matches('discipline.name', params)
   #end
 
