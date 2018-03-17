@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= begin
       devise_session_key = session["warden.user.user.key"]
       devise_user = User.find(devise_session_key[0][0]) if devise_session_key
-      devise_user || NullObjects::GuestUser.new
+      devise_user.decorate || NullObjects::GuestUser.new
     end
   end
 
