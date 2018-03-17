@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :trainings
   end
   get "/trainings", to: "trainings#index"
+  get "training/search", to: "trainings#search"
 end

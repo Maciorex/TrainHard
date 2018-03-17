@@ -17,6 +17,12 @@ class TrainingsController < ApplicationController
     redirect_to user_trainings_path(current_user)
   end
 
+  def search
+
+  end
+
+  private
+
   def trainings_params
     params.required(:training).permit(:name)
   end

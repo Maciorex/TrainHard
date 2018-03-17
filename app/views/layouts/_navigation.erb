@@ -18,9 +18,15 @@
             <% end %>
           </ul>
         </li>
-        <% if current_user %>
-          <li><%= link_to "My Trainings", user_trainings_path(current_user) %></li>
-        <% end %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trainings <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% if current_user %>
+              <li><%= link_to "My Trainings", user_trainings_path(current_user) %></li>
+              <li><%= link_to "Search for training", training_search_path %></li>
+            <% end %>
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right col-md-4">
         <div class="row">
