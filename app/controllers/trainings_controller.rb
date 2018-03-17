@@ -17,7 +17,18 @@ class TrainingsController < ApplicationController
     redirect_to user_trainings_path(current_user)
   end
 
-  def search; end
+  def search
+    if params[:training].blank?
+      flash[:danger] = "Empty search string"
+    else
+      @training = Training.from_search(params[:training])
+      flash[:danger] = "No matching training" if @training.blank?
+    end
+    respond_to do |format|
+      format.html { render(:text => "not implemented") }
+      format.js { render partial: "trainings/result" }
+    end
+  end
 
   private
 
