@@ -1,4 +1,9 @@
 <img class="img-thumbnail">
   <%= image_tag("Arnold-Schwarzenegger-696x426.jpeg", :alt => "rss feed") %>
 </img>
-<h1>Witamy <%= current_user.full_name %></h1>
+
+<h1>
+  Witamy <% if user_signed_in? %>
+  <%= current_user.full_name %>
+  <% end %>
+</h1>
