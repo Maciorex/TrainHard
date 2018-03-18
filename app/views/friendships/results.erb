@@ -1,0 +1,20 @@
+<% unless @search_user.blank? %>
+<div class="well results-block col-md-10">
+<table class="search-results-table col-md-12">
+  <tbody>
+    <% @search_user.each do |user| %>
+      <tr>
+        <td><strong>Name:</strong><%= user.first_name %></td>
+        <td><strong>Email:</strong><%= user.email %></td>
+        <td><strong>Profile:</strong> <%= link_to "View profile", user_path(user), class: "btn btn-xs btn-info" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<% end %>
+
+<div class="col-md-offset-4 col-md-4">
+  <%= link_to "Back to Searching Friends", my_friends_path, class: "btn btn-lg btn-info" %>
+</div>
