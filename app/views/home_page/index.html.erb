@@ -2,9 +2,5 @@
   <%= image_tag("Arnold-Schwarzenegger-696x426.jpeg", :alt => "rss feed") %>
 </img>
 
-<h1>
-  Witamy
-  <% if user_signed_in? %>
-    <%= current_user.full_name %>
-  <% end %>
+<h1> Witamy <%= if user_signed_in?; current_user.full_name end %>
 </h1>
