@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+    <th> Name </th>
+    <th> Date </th>
+    <th> Elapsed Time </th>
+    <th> Discipline </th>
+  </thead>
+  <tbody>
+    <% training.each do |training| %>
+      <tr>
+        <td><%= link_to training.name, user_training_path(current_user, training) %></td>
+        <td><%= training.date_of_training %></td>
+        <td><%= training.time_in_minutes %></td>
+        <td><%= link_to training.discipline.name, discipline_path(training.discipline) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="col-md-offset-4 col-md-4">
+  <%= link_to "Search for another training", training_search_path, class: "btn btn-lg btn-info" %>
+</div>

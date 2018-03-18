@@ -11,6 +11,7 @@ class DisciplinesController < ApplicationController
 
   def create
     @discipline = Discipline.new(discipline_params)
+    @discipline.name.capitalize!
     if @discipline.save
       flash[:success] = "ŻEM DODOŁ DYSCYPLINA"
       redirect_to disciplines_path

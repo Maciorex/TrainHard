@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
   get "/trainings", to: "trainings#index"
   get "training/search", to: "trainings#search"
+  post "training/search_new", to: "trainings#search_training"
+  get "my_profile", to: "users#my_profile"
 end
