@@ -24,7 +24,6 @@ group :production do
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'rubocop', require: false
