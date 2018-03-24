@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "my_profile", to: "users#my_profile"
   get "my_friends", to: "users#my_friends"
   post "friends_search", to: "friendships#search"
+  post "add_friend", to: "friendships#add_friend"
 end

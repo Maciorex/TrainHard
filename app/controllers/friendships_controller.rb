@@ -1,8 +1,19 @@
 class FriendshipsController < ApplicationController
 
-  def add_friend; end
+  def add_friend
+    @friend = User.find(params[:friend])
+    current_user.friendships.build(friend_id: @friend.id)
+    if current_user.save
+      flash[:success] = "CHOPIE MOSZ FONFLA"
+    else
+      flash[:notice] = "ŻEŚ JE CIUL"
+    end
+    redirect_to my_friends_path
+  end
 
-  def destroy; end
+  def destroy
+
+  end
 
   def search
     if params[:friend_search].blank?
