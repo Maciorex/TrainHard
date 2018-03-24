@@ -3,8 +3,5 @@
 </img>
 
 <h1>
-  Witamy
-  <% if user_signed_in? %>
-    <%= current_user.full_name %>
-  <% end %>
+  Witamy <%= if user_signed_in?; current_user.full_name end %>
 </h1>

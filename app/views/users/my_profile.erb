@@ -1,12 +1,31 @@
 <h1><%= current_user.full_name %> profile </h1>
+<div class="col col-md-10">
+  <table class="table table-striped">
+    <thead>
+      <th> Statistics: </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col col-md-4">Number of trainings:</td>
+        <td class="col col-md-8"><%= current_user.trainings.count %></td>
+      </tr>
+      <tr>
+        <td class="col col-md-4">Elapsed time:</td>
+        <td class="col col-md-8"><%= @time %></td>
+      </tr>
+      <tr>
+        <td class="col col-md-4">Covered distance:</td>
+        <td class="col col-md-8"><%= @distance %> meters</td>
+      </tr>
+      <tr>
+        <td class="col col-md-4">Travels to Moon:</td>
+        <td class="col col-md-8"><%= (@distance/ 384400000.0).round(8) %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<table class="table-striped table-hover">
-  <thead>
-    <th> Statistics: </th>
-  </thead>
-  <tbody>
-
-  </tbody>
-</table>
-
-<%= link_to "Edit Profile", edit_user_registration_path(current_user), class:"btn btn-lg btn-info" %>
+<div class="col col-md-4">
+  <%= link_to "Edit Profile", edit_user_registration_path(current_user), class:"btn btn-md btn-info" %>
+  <%= link_to "My Friends", my_friends_path, class:"btn btn-md btn-info" %>
+</div>

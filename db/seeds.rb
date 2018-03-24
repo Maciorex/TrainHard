@@ -9,7 +9,7 @@
 users = %w(macio basia seba mati brajan szefu lysy adik jan janusz)
 
 users.each_with_index do |user|
-  User.create(password: "password", email: "#{user}@email.com")
+  User.create(password: "password", email: "#{user}@email.com", first_name: "#{user}", second_name: "#{user}_second")
 end
 
 user1 = User.first
