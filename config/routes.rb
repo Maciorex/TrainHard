@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "training/search", to: "trainings#search"
   post "training/search_new", to: "trainings#search_training"
   get "my_profile", to: "users#my_profile"
+  resources :places
 end

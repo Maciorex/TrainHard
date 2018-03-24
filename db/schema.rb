@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318095048) do
+ActiveRecord::Schema.define(version: 20180324103719) do
 
   create_table "disciplines", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20180318095048) do
     t.datetime "updated_at", null: false
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string "country", default: "", null: false
+    t.string "city", default: "", null: false
+    t.string "resort", default: "", null: false
+    t.string "otherPlace", default: "", null: false
+    t.string "gpsCoordinates", default: "", null: false
   end
 
   create_table "trainings", force: :cascade do |t|

@@ -1,0 +1,23 @@
+
+<h1 align="center">Place</h1>
+  <% @places.each do |place| %>
+<div class="row col-xs-8 col-xs-offset-2">
+<div class="well well-lg">
+<div class="place_country">
+  <%= place.country %>
+</div>
+<div class="place_city">
+  <%= place.city %>
+</div>
+<div class="place_resort">
+  <%= place.resort %>
+</div>
+<div class="place_otherPlace">
+  <%= place.otherPlace %>
+</div>
+<div class="place_gpsCoordinates">
+  <%= place.gpsCoordinates %>
+</div>
+</div>
+</div>
+<% end %>
