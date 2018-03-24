@@ -22,6 +22,6 @@ class Training < ApplicationRecord
   end
 
   def self.matches(field, params)
-    Training.where("#{field} like ?", "#{params}")
+    Training.where("#{field} like ?", "%#{params}%")
   end
 end

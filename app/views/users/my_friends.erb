@@ -1,5 +1,23 @@
 <h1>My Friends </h1>
-
+<br>
+<% if @friendships %>
+  <div class="wellcol-md-10">
+    <table class="search-results-table col-md-12">
+      <tbody>
+        <% @friendships.each do |friend| %>
+          <tr>
+            <td><strong>Name:</strong><%= "#{friend.decorate.full_name}" %></td>
+            <td><strong>Email:</strong><%= friend.email %></td>
+            <td><strong>Profile:</strong> <%= link_to "View profile", user_path(friend), class: "btn btn-xs btn-info" %>
+              <%= link_to "Remove Friend", friendship_path(friend), method: :delete, class: "btn btn-xs btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+<br><br>
 <h4>Search for friends</h4>
 
 <%= form_tag friends_search_path, id: "friend-lookup-form" do %>

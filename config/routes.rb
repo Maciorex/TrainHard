@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'user/registrations' }
   root 'home_page#index'
   resources :disciplines
+  resources :friendships, only: :destroy
   resources :users do
     resources :trainings
   end
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
   get "my_profile", to: "users#my_profile"
   get "my_friends", to: "users#my_friends"
   post "friends_search", to: "friendships#search"
+  post "add_friend", to: "friendships#add_friend"
 end
