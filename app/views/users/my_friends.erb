@@ -9,7 +9,7 @@
             <td><strong>Name:</strong><%= "#{friend.decorate.full_name}" %></td>
             <td><strong>Email:</strong><%= friend.email %></td>
             <td><strong>Profile:</strong> <%= link_to "View profile", user_path(friend), class: "btn btn-xs btn-info" %>
-
+              <%= link_to "Remove Friend", friendship_path(friend), method: :delete, class: "btn btn-xs btn-danger" %>
             </td>
           </tr>
         <% end %>

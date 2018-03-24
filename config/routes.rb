@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'user/registrations' }
   root 'home_page#index'
   resources :disciplines
+  resources :friendships, only: [:destroy]
   resources :users do
     resources :trainings
   end
