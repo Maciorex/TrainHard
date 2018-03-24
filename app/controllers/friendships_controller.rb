@@ -8,7 +8,7 @@ class FriendshipsController < ApplicationController
     if params[:friend_search].blank?
       flash.now[:danger] = "Empty search string"
     else
-      @search_user = User.search_user(params[:friend_search])
+      @search_user = SearchUserQuery.new(params[:friend_search]).result
       flash.now[:danger] = "No such user :(" if @search_user.blank?
     end
     render 'results'
