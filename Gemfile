@@ -20,7 +20,7 @@ gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :production do
-  # gem 'pg', '~>0.11'
+  gem 'pg', '~>0.11'
 end
 
 group :development, :test do
