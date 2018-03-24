@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "training/search", to: "trainings#search"
   post "training/search_new", to: "trainings#search_training"
   get "my_profile", to: "users#my_profile"
+  resources :places
   get "my_friends", to: "users#my_friends"
   post "friends_search", to: "friendships#search"
   post "add_friend", to: "friendships#add_friend"
